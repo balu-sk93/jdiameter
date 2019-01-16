@@ -264,6 +264,7 @@ public class TCPTransportClient implements Runnable {
       socketChannel.close();
     }
     if (selfThread != null) {
+      selfThread.interrupt();
       selfThread.join(100);
     }
     clearBuffer();
